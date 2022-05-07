@@ -4,7 +4,8 @@ const controller = require('../controllers/appController.js');
 const { login, verify } = require("../auth/auth");
 
 //Main Page routing here.
-router.get("/", controller.main_page);
+router.get("/", controller.show_about);
+router.get("/main", controller.main_page);
 router.get("/login", controller.show_login);
 router.post("/logged", login, controller.handle_login);
 router.get("/logout", controller.logout);

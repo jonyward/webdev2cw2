@@ -12,8 +12,8 @@ class UserDAO {
         }
 
         this.db.insert({
-            user: 'Peter',
-            password: '$2b$10$I82WRFuGghOMjtu3LLZW9OAMrmYOlMZjEEkh.vx.K2MM05iu5hY2C'
+            user: 'Admin',
+            password: '$2a$12$.hZShaLcrj/2o4bWb11g4uG0anpLZWYrCR54kQGhiXN7O4kc0T9z.'
         });
     }
 }

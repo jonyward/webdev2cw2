@@ -15,8 +15,31 @@ class Menu {
             name: 'Pizza',
             description: 'Pepperoni Pizza',
             ingredients: 'Dough, Cheese, Tomato, Pepperoni',
+            allergens: 'Gluten',
             price: 5,
             type: 'Dinner',
+            availability: true
+        });
+        console.log('Dish Entered');
+
+        this.db.insert({
+            name: 'Pizza',
+            description: 'Pepperoni Pizza',
+            ingredients: 'Dough, Cheese, Tomato, Pepperoni',
+            allergens: 'Gluten',
+            price: 5,
+            type: 'Lunch',
+            availability: true
+        });
+        console.log('Dish Entered');
+
+        this.db.insert({
+            name: 'Pizza',
+            description: 'Pepperoni Pizza',
+            ingredients: 'Dough, Cheese, Tomato, Pepperoni',
+            allergens: 'Gluten',
+            price: 5,
+            type: 'Special',
             availability: true
         });
         console.log('Dish Entered');
@@ -109,11 +132,12 @@ class Menu {
         })
     }
 
-    addDish(name, description, ingredients, price, type, availability) {
+    addDish(name, description, ingredients, allergens, price, type, availability) {
         var entry = {
             name: name, 
             description: description,
             ingredients: ingredients,
+            allergens: allergens,
             price: price,
             type: type,
             availability: availability
@@ -154,11 +178,11 @@ class Menu {
         })
     }
 
-    updateDish(id, name, description, ingredients, price, type, availability) {
+    updateDish(id, name, description, ingredients, allergens, price, type, availability) {
         return new Promise((resolve, reject) => {
             availability = availability === "True";
             price = Number(price);
-            this.db.update({ "_id": id}, { $set: {'name': name, 'description': description, 'ingredients': ingredients, 'price': price, "type": type, 'availability': availability }}, {}, function(err, entries) {
+            this.db.update({ "_id": id}, { $set: {'name': name, 'description': description, 'ingredients': ingredients, 'allergens': allergens, 'price': price, "type": type, 'availability': availability }}, {}, function(err, entries) {
                 if (err) {
                     reject(err);
                 } else {

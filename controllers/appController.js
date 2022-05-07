@@ -11,6 +11,10 @@ exports.show_login = function (req, res) {
     res.render("login");
 };
 
+exports.show_about = function (req, res) {
+    res.render("about");
+};
+
 exports.handle_login = function (req, res) {    //login
     res.redirect("/staff")
 }
@@ -21,10 +25,14 @@ exports.main_page = function (req, res) {
         .then((dinner) => {
             db.getLunchDishes(type)
                 .then((lunch) => {
+                    db.getSpecialDishes(type)
+                        .then((special) => {
                     res.render("main", {
                         dinner: dinner,
                         lunch: lunch,
+                        special: special,
                     })
+                });
                 });
         })
         .catch((err) => {
@@ -70,7 +78,7 @@ exports.post_new_entry = function (req, res) {
         response.status(400).send("Dish must have a name.");
         return;
     }
-    db.addDish(req.body.name, req.body.description, req.body.ingreedients, req.body.price, req.body.type, req.body.availability === "True");
+    db.addDish(req.body.name, req.body.description, req.body.ingreedients, req.body.allergens, req.body.price, req.body.type, req.body.availability === "True");
     res.redirect("/staff");
 }
 
@@ -80,7 +88,7 @@ exports.post_update = function (req, res) {
         response.status(400).send("Dish must have a name.");
         return;
     }
-    db.updateDish(req.body.id, req.body.name, req.body.description, req.body.ingredients, req.body.price, req.body.type, req.body.availability);
+    db.updateDish(req.body.id, req.body.name, req.body.description, req.body.ingredients, req.body.allergens, req.body.price, req.body.type, req.body.availability);
     res.redirect("/staff");
 }
 

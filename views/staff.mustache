@@ -2,7 +2,7 @@
     <head>
     </head>
     <body>
-    <a href="/">Home Page</a>
+    <a href="/main">Home Page</a>
     <a href="/logout">Logout</a>
     <h1>Enter a new dish</h1>
     <form method="post" role="form" action="/new">
@@ -12,12 +12,15 @@
         <input type="text" id="description" name="description" placeholder="Please enter a dish description" required>
         <label for="ingredients">Ingredients:</label>
         <input type="text" id="ingredients" name="ingredients" placeholder="Please enter dish ingredients" required>
+        <label for="ingredients">Allergens:</label>
+        <input type="text" id="allergens" name="allergens" placeholder="Please enter any any Allergens" required>
         <label for="price">Price:</label>
         <input type="float" id="price" name="price" placeholder="Please enter dish price" required>
         <label for="type">Type:</label>
         <select name="type" id="type">
             <option value="Dinner">Dinner</option>
             <option value="Lunch">Lunch</option>
+            <option value="Special">Special</option>
         </select>
         <label for="availability">Availability:</label>
         <select name="availability" id="availability">
@@ -33,8 +36,9 @@
         <p>
             Description: {{description}} <br>
             Ingredients: {{ingredients}} <br>
-            Price: £{{price}} <br></p>
-            Availability: {{availability}} <br>
+            Allergens: {{allergens}} <br>
+            Price: £{{price}} <br>
+            Availability: {{availability}} <br></p>
         <a href="/edit/{{_id}}">Update Dish</a>
     {{/dinner}}
     <h1>Lunch Menu</h1>
@@ -43,9 +47,21 @@
         <p>
             Description: {{description}} <br>
             Tngredients: {{ingredients}} <br>
-            Price: £{{price}} <br></p>
-            Availability: {{availability}} <br>
+            Allergens: {{allergens}} <br>
+            Price: £{{price}} <br>
+            Availability: {{availability}} <br></p>
         <a href="/edit/{{_id}}">Update Dish</a>
     {{/lunch}}
+    <h1>Specials Menu</h1>
+    {{#special}}
+        <h2>{{name}}</h2>
+        <p>
+            Description: {{description}} <br>
+            Ingredients: {{ingredients}} <br>
+            Allergens: {{allergens}} <br>
+            Price: £{{price}} <br>
+            Availability: {{availability}} <br></p>
+        <a href="/edit/{{_id}}">Update Dish</a>
+    {{/special}}
     </body>
 </html>

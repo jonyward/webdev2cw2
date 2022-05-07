@@ -12,12 +12,15 @@
         <input type="text" id="description" name="description" placeholder="Please enter a dish description" required value="{{dish.description}}">
         <label for="ingredients">ingredients:</label>
         <input type="text" id="ingredients" name="ingredients" placeholder="Please enter dish ingredients" required value="{{dish.ingredients}}">
+        <label for="ingredients">Allergens:</label>
+        <input type="text" id="allergens" name="allergens" placeholder="Please enter any any Allergens" required value="{{dish.allergens}}">
         <label for="price">Price:</label>
         <input type="number" id="price" name="price" placeholder="Please enter dish price" required value="{{dish.price}}">
         <label for="type">Type:</label>
         <select name="type" id="type" value="{{dish.type}}">
             <option value="Dinner">Dinner</option>
             <option value="Lunch">Lunch</option>
+            <option value="Special">Special</option>
         </select>
         <label for="availability">Availability:</label>
         <select name="availability" id="availability" value="{{dish.availability}}">
@@ -35,6 +38,8 @@
             type.selectedIndex = 0;
         } else if ("{{dish.type}}" === "Lunch"){
             type.selectedIndex = 1;
+        } else if ("{{dish.type}}" === "Special") {
+            type.selectedIndex = 2;
         }
 
         if ({{dish.availability}}){
