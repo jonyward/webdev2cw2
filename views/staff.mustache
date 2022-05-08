@@ -1,9 +1,12 @@
 <html>
     <head>
+    {{>header}}
     </head>
     <body>
-    <a href="/main">Home Page</a>
-    <a href="/logout">Logout</a>
+    <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color: #e8d3b9;">
+    {{>staffnavbar}}
+    </nav>
+    <div style="margin-top:100px">
     <h1>Enter a new dish</h1>
     <form method="post" role="form" action="/new">
         <label for="name">Name:</label>
@@ -63,5 +66,6 @@
             Availability: {{availability}} <br></p>
         <a href="/edit/{{_id}}">Update Dish</a>
     {{/special}}
+    </div>
     </body>
 </html>

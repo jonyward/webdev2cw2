@@ -1,35 +1,58 @@
 <html>
     <head>
+    {{>header}}
     </head>
     <body>
-    <a href="/">About Us</a> 
-    <a href="/staff">Staff Login</a> 
-    <h1>Dinner Menu</h1>
+    <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color: #e8d3b9;">
+    {{>navbar}}
+    </nav>
+    <div style="margin-top:100px">
+    <div class=text-center>
+    <h1>Menu</h1>
+    <p>Below all our available dishes are shown, including helpful information on each individual dish<br> 
+    including the name, a short description, ingreedients, any possible allergens contained in the dish, and the<br>
+     price of the dish.<br><br> We have Three available Menus: <br>Dinner Menu<br>Lunch Menu<br>Specials Menu <br><br>
+    </p> 
+    </div>
+    <div class="container">
+    <div class="text-center">
+    <hr><h3>Dinner Menu</h3><hr>
     {{#dinner}}
-        <h2>{{name}}</h2>
+        <h4>{{name}}</h4>
         <p>
-            Description: {{description}} <br>
-            Ingredients: {{ingredients}} <br>
-            Allergens: {{allergens}} <br>
-            Price: £{{price}} <br></p>
+            Description: <br>{{description}} <br>
+            Ingredients: <br>{{ingredients}} <br>
+            Allergens: <br>{{allergens}} <br>
+            Price: <br>£{{price}} <br></p> <br>
     {{/dinner}}
-    <h1>Lunch Menu</h1>
+    </div>
+    </div>
+    <div class="container">
+    <div class="text-center">
+    <hr><h3>Lunch Menu</h3><hr>
     {{#lunch}}
-        <h2>{{name}}</h2>
+        <h4>{{name}}</h4>
         <p>
-            Description: {{description}} <br>
-            Ingredients: {{ingredients}} <br>
-            Allergens: {{allergens}} <br>
-            Price: £{{price}} <br></p>
+            Description: <br>{{description}} <br>
+            Ingredients: <br>{{ingredients}} <br>
+            Allergens: <br>{{allergens}} <br>
+            Price: <br>£{{price}} <br></p> <br>
     {{/lunch}}
-    <h1>Specials Menu</h1>
+    </div>
+    </div>
+    <div class="container">
+    <div class="text-center">
+    <hr><h3>Specials Menu</h3><hr>
     {{#special}}
-        <h2>{{name}}</h2>
+        <h4>{{name}}</h4>
         <p>
-            Description: {{description}} <br>
-            Ingredients: {{ingredients}} <br>
-            Allergens: {{allergens}} <br>
-            Price: £{{price}} <br></p>
+            Description: <br>{{description}} <br>
+            Ingredients: <br>{{ingredients}} <br>
+            Allergens: <br>{{allergens}} <br>
+            Price: <br>£{{price}} <br></p> <br>
     {{/special}}
+    </div>
+    </div>
+    </div>
     </body>
 </html>

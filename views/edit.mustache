@@ -1,8 +1,12 @@
 <html>
     <head>
+    {{>header}}
     </head>
     <body>
-    <a href="/staff">Cancel Dish Update</a>
+    <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color: #e8d3b9;">
+    {{>updateNav}}
+    </nav>
+    <div style="margin-top:100px">
     <h1>Update an Existing Dish</h1>
     <form method="post" role="form" action="/update">
         <input type="hidden" id="id" name="id" value={{dish._id}}>
@@ -30,6 +34,7 @@
         <br><br>
         <input type="submit" value="Update">
     </form>
+    </div>
     </body>
     <script>
         var type = document.getElementById("type");

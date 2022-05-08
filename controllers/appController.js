@@ -78,7 +78,7 @@ exports.post_new_entry = function (req, res) {
         response.status(400).send("Dish must have a name.");
         return;
     }
-    db.addDish(req.body.name, req.body.description, req.body.ingreedients, req.body.allergens, req.body.price, req.body.type, req.body.availability === "True");
+    db.addDish(req.body.name, req.body.description, req.body.ingredients, req.body.allergens, req.body.price, req.body.type, req.body.availability === "True");
     res.redirect("/staff");
 }
 

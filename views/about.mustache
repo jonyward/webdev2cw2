@@ -1,11 +1,15 @@
 <html>
     <head>
-        <title> About</title>
+        {{>header}}
     </head>
     <body>
-        <h1> About us</h1>
+    <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color: #e8d3b9;">
+    {{>navbar}}
+    </nav>
+    <div style="margin-top:100px">
+        <h4> About us</h4>
         <p>This is a test to make sure routing has been set up properly, this will change.</p>
         <p>This is another test to ensure nodemon works fine.</p>
-        <a href="/main">Menu</a>
     </body>
+    </div>
 </html>
