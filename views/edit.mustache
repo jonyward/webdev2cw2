@@ -3,10 +3,10 @@
     {{>header}}
     </head>
     <body>
-    <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color: #e8d3b9;">
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: #e8d3b9;">
     {{>updateNav}}
     </nav>
-    <div style="margin-top:100px">
+    <div style="margin-top:75px">
     <h1>Update an Existing Dish</h1>
     <form method="post" role="form" action="/update">
         <input type="hidden" id="id" name="id" value={{dish._id}}>

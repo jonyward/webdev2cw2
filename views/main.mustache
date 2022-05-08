@@ -3,10 +3,10 @@
     {{>header}}
     </head>
     <body>
-    <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color: #e8d3b9;">
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: #e8d3b9;">
     {{>navbar}}
     </nav>
-    <div style="margin-top:100px">
+    <div style="margin-top:75px">
     <div class=text-center>
     <h1>Menu</h1>
     <p>Below all our available dishes are shown, including helpful information on each individual dish<br> 
@@ -14,43 +14,49 @@
      price of the dish.<br><br> We have Three available Menus: <br>Dinner Menu<br>Lunch Menu<br>Specials Menu <br><br>
     </p> 
     </div>
-    <div class="container">
-    <div class="text-center">
-    <hr><h3>Dinner Menu</h3><hr>
+    <div class="card text-center">
+        <div class="card-body w-50 m-5 pb-5 mx-auto">
+    <h3>Dinner Menu</h3><hr>
+    <div class="text-left">
     {{#dinner}}
         <h4>{{name}}</h4>
-        <p>
-            Description: <br>{{description}} <br>
-            Ingredients: <br>{{ingredients}} <br>
-            Allergens: <br>{{allergens}} <br>
-            Price: <br>£{{price}} <br></p> <br>
+        <p class="card-text">
+            Description: {{description}} <br><br>
+            Ingredients: {{ingredients}} <br><br>
+            Allergens: {{allergens}} <br><br>
+            Price: £{{price}} <br></p> <br>
     {{/dinner}}
     </div>
     </div>
-    <div class="container">
-    <div class="text-center">
-    <hr><h3>Lunch Menu</h3><hr>
+    </div>
+    <div class="card text-center">
+        <div class="card-body w-50 m-5 pb-5 mx-auto">
+    <h3>Lunch Menu</h3><hr>
+    <div class="text-left">
     {{#lunch}}
         <h4>{{name}}</h4>
         <p>
-            Description: <br>{{description}} <br>
-            Ingredients: <br>{{ingredients}} <br>
-            Allergens: <br>{{allergens}} <br>
-            Price: <br>£{{price}} <br></p> <br>
+            Description: {{description}} <br><br>
+            Ingredients: {{ingredients}} <br><br>
+            Allergens: {{allergens}} <br><br>
+            Price: £{{price}} <br></p> <br>
     {{/lunch}}
     </div>
     </div>
-    <div class="container">
-    <div class="text-center">
-    <hr><h3>Specials Menu</h3><hr>
+    </div>
+    <div class="card text-center">
+        <div class="card-body w-50 m-5 pb-5 mx-auto">
+    <h3>Specials Menu</h3><hr>
+    <div class="text-left">
     {{#special}}
         <h4>{{name}}</h4>
         <p>
-            Description: <br>{{description}} <br>
-            Ingredients: <br>{{ingredients}} <br>
-            Allergens: <br>{{allergens}} <br>
-            Price: <br>£{{price}} <br></p> <br>
+            Description: {{description}} <br><br>
+            Ingredients: {{ingredients}} <br><br>
+            Allergens: {{allergens}} <br><br>
+            Price: £{{price}} <br></p> <br>
     {{/special}}
+    </div>
     </div>
     </div>
     </div>

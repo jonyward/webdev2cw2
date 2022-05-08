@@ -3,16 +3,16 @@
     {{>header}}
     </head>
     <body>
-    <nav class="navbar navbar-dark bg-dark navbar-fixed-top" style="background-color: #e8d3b9;">
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: #e8d3b9;">
     {{>staffnavbar}}
     </nav>
-    <div style="margin-top:100px">
+    <div style="margin-top:75px">
     <h1>Enter a new dish</h1>
     <form method="post" role="form" action="/new">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Please enter a dish name" required>
         <label for="description">Description:</label>
-        <input type="text" id="description" name="description" placeholder="Please enter a dish description" required>
+        <input type="text" id="description" name="description" placeholder="Please enter a dish description" rows="3" required>
         <label for="ingredients">Ingredients:</label>
         <input type="text" id="ingredients" name="ingredients" placeholder="Please enter dish ingredients" required>
         <label for="ingredients">Allergens:</label>
@@ -33,39 +33,53 @@
         <br><br>
         <input type="submit" value="Submit">
     </form>
-    <h1>Dinner Menu</h1>
+    <div class="container">
+    <div class="text-center">
+    <h2>All Dishes</h2>
+    <p>Below shows all recorded dishes, updating whenever a new dish is added. <br>Each dish can be edited to then be displayed on the public menu.</p>
+    <hr><h3>Dinner Menu</h3><hr>
     {{#dinner}}
-        <h2>{{name}}</h2>
+        <h4>{{name}}</h4>
         <p>
             Description: {{description}} <br>
             Ingredients: {{ingredients}} <br>
             Allergens: {{allergens}} <br>
             Price: £{{price}} <br>
             Availability: {{availability}} <br></p>
-        <a href="/edit/{{_id}}">Update Dish</a>
+        <a href="/edit/{{_id}}">Update Dish</a> <br>
     {{/dinner}}
-    <h1>Lunch Menu</h1>
+    </div>
+    </div>
+    <div class="container">
+    <div class="text-center">
+    <hr><h3>Lunch Menu</h3><hr>
     {{#lunch}}
-        <h2>{{name}}</h2>
+        <h4>{{name}}</h4>
         <p>
             Description: {{description}} <br>
             Tngredients: {{ingredients}} <br>
             Allergens: {{allergens}} <br>
             Price: £{{price}} <br>
             Availability: {{availability}} <br></p>
-        <a href="/edit/{{_id}}">Update Dish</a>
+        <a href="/edit/{{_id}}">Update Dish</a> <br>
     {{/lunch}}
-    <h1>Specials Menu</h1>
+    </div>
+    </div>
+    <div class="container">
+    <div class="text-center">
+    <hr><h4>Specials Menu</h4><hr>
     {{#special}}
-        <h2>{{name}}</h2>
+        <h4>{{name}}</h4>
         <p>
             Description: {{description}} <br>
             Ingredients: {{ingredients}} <br>
             Allergens: {{allergens}} <br>
             Price: £{{price}} <br>
             Availability: {{availability}} <br></p>
-        <a href="/edit/{{_id}}">Update Dish</a>
+        <a href="/edit/{{_id}}">Update Dish</a> <br>
     {{/special}}
+    </div>
+    </div>
     </div>
     </body>
 </html>
