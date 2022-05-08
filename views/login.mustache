@@ -4,18 +4,19 @@
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: #e8d3b9;">
     {{>navbar}}
     </nav>
-    <div style="margin-top:50px">
-        <h2>Sign in</h2>
+    <div class= "container w-25 mx-auto" style="margin-top:250px">
+        <h2>Sign in</h2><hr>
             <form method ="POST" action="/logged">
                 <label for="username">
-                    Username 
+                    Username: 
                 </label>
-                    <input type= "text" id="username" name="username" placeholder="username">
+                    <input style="width: 100%" type= "text" id="username" name="username" placeholder="username"><br>
                 <label for="password">
-                    Password 
+                    Password:   
                 </label>
-                    <input type= "password" id="password" name="password" placeholder="password">
-                <input type = "submit" value="Sign In">
+                    <input style="width: 100%" type= "password" id="password" name="password" placeholder="password">
+                <hr><input type = "submit" value="Sign In">
+                </div>
             </form>
         </div>
     </body>
