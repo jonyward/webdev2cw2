@@ -7,32 +7,37 @@
     {{>staffnavbar}}
     </nav>
     <div style="margin-top:50px">
-    <h1>Staff Page</h1>
-    <form method="post" role="form" action="/new">
+    <div class="text-center">
+    <h1>Staff Page</h1><hr><br>
+    </div>
+    <h2 class="text-center">Add Dish</h2><br>
+    <p class="text-center">Provided below is a form allowing dishes to be added to the system.</p><br>
+    <div class="w-50 m-5 pb-5 mx-auto">
+    <hr><form method="post" role="form" action="/new">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Please enter a dish name" required>
+        <input style="width: 960px" type="text" id="name" name="name" placeholder="Please enter a dish name" required><br>
         <label for="description">Description:</label>
-        <input type="text" id="description" name="description" placeholder="Please enter a dish description" rows="3" required>
+        <input style="width: 960px" type="text" id="description" name="description" placeholder="Please enter a dish description" rows="3" required><br>
         <label for="ingredients">Ingredients:</label>
-        <input type="text" id="ingredients" name="ingredients" placeholder="Please enter dish ingredients" required>
+        <input style="width: 960px" type="text" id="ingredients" name="ingredients" placeholder="Please enter dish ingredients" required><br>
         <label for="ingredients">Allergens:</label>
-        <input type="text" id="allergens" name="allergens" placeholder="Please enter any any Allergens" required>
+        <input style="width: 960px" type="text" id="allergens" name="allergens" placeholder="Please enter any any Allergens" required><br>
         <label for="price">Price:</label>
-        <input type="float" id="price" name="price" placeholder="Please enter dish price" required>
+        <input style="width: 960px" type="float" id="price" name="price" placeholder="Please enter dish price" required><br><br>
         <label for="type">Type:</label>
         <select name="type" id="type">
             <option value="Dinner">Dinner</option>
             <option value="Lunch">Lunch</option>
             <option value="Special">Special</option>
-        </select>
+        </select><br><br>
         <label for="availability">Availability:</label>
         <select name="availability" id="availability">
             <option value="True">True</option>
             <option value="False">False</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Submit">
+        </select><br><br>
+        <input type="submit" value="Submit"><hr>
     </form>
+    </div>
     <div class="text-center">
     <h2>All Dishes</h2>
     <p>Below shows all recorded dishes, updating whenever a new dish is added. <br>Each dish can be edited to then be displayed on the public menu.</p>

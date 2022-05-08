@@ -7,33 +7,38 @@
     {{>updateNav}}
     </nav>
     <div style="margin-top:50px">
-    <h1>Update an Existing Dish</h1>
-    <form method="post" role="form" action="/update">
+    <div class="text-center">
+    <h1>Update An Existing Dish</h1><hr><br>
+    </div>
+    <p class="text-center"> Provided below is a form allowing dishes already existing in the system to be edited.<br> The details of the dish that is being edited will be filled into the form. <br>All existing details about the dish can be edited, with the changes being updated to the public menu.</p><br>
+    <div class="w-50 m-5 pb-5 mx-auto">
+    <hr><form method="post" role="form" action="/update">
         <input type="hidden" id="id" name="id" value={{dish._id}}>
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Please enter a dish name" required value="{{dish.name}}">
+        <input style="width: 960px" type="text" id="name" name="name" placeholder="Please enter a dish name" required value="{{dish.name}}">
         <label for="description">Description</label>
-        <input type="text" id="description" name="description" placeholder="Please enter a dish description" required value="{{dish.description}}">
+        <input style="width: 960px" type="text" id="description" name="description" placeholder="Please enter a dish description" required value="{{dish.description}}"><br>
         <label for="ingredients">ingredients:</label>
-        <input type="text" id="ingredients" name="ingredients" placeholder="Please enter dish ingredients" required value="{{dish.ingredients}}">
+        <input style="width: 960px" type="text" id="ingredients" name="ingredients" placeholder="Please enter dish ingredients" required value="{{dish.ingredients}}"><br>
         <label for="ingredients">Allergens:</label>
-        <input type="text" id="allergens" name="allergens" placeholder="Please enter any any Allergens" required value="{{dish.allergens}}">
+        <input style="width: 960px" type="text" id="allergens" name="allergens" placeholder="Please enter any any Allergens" required value="{{dish.allergens}}"><br>
         <label for="price">Price:</label>
-        <input type="number" id="price" name="price" placeholder="Please enter dish price" required value="{{dish.price}}">
+        <input style="width: 960px" type="number" id="price" name="price" placeholder="Please enter dish price" required value="{{dish.price}}"><br><br>
         <label for="type">Type:</label>
         <select name="type" id="type" value="{{dish.type}}">
             <option value="Dinner">Dinner</option>
             <option value="Lunch">Lunch</option>
             <option value="Special">Special</option>
-        </select>
+        </select><br><br>
         <label for="availability">Availability:</label>
         <select name="availability" id="availability" value="{{dish.availability}}">
             <option [ngValue]="true">True</option>
             <option [ngValue]="false">False</option>
         </select>
         <br><br>
-        <input type="submit" value="Update">
+        <input type="submit" value="Update"><hr>
     </form>
+    </div>
     </div>
     </body>
     <script>
