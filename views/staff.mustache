@@ -6,8 +6,8 @@
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: #e8d3b9;">
     {{>staffnavbar}}
     </nav>
-    <div style="margin-top:75px">
-    <h1>Enter a new dish</h1>
+    <div style="margin-top:50px">
+    <h1>Staff Page</h1>
     <form method="post" role="form" action="/new">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Please enter a dish name" required>
@@ -33,14 +33,17 @@
         <br><br>
         <input type="submit" value="Submit">
     </form>
-    <div class="container">
     <div class="text-center">
     <h2>All Dishes</h2>
     <p>Below shows all recorded dishes, updating whenever a new dish is added. <br>Each dish can be edited to then be displayed on the public menu.</p>
+    </div>
+    <div class="card text-center">
+    <div class="card-body w-50 m-5 pb-5 mx-auto">
     <hr><h3>Dinner Menu</h3><hr>
+    <div class="text-left">
     {{#dinner}}
         <h4>{{name}}</h4>
-        <p>
+        <p class="card-text">
             Description: {{description}} <br>
             Ingredients: {{ingredients}} <br>
             Allergens: {{allergens}} <br>
@@ -50,9 +53,11 @@
     {{/dinner}}
     </div>
     </div>
-    <div class="container">
-    <div class="text-center">
+    </div>
+    <div class="card text-center">
+    <div class="card-body w-50 m-5 pb-5 mx-auto">
     <hr><h3>Lunch Menu</h3><hr>
+    <div class="text-left">
     {{#lunch}}
         <h4>{{name}}</h4>
         <p>
@@ -65,9 +70,11 @@
     {{/lunch}}
     </div>
     </div>
-    <div class="container">
-    <div class="text-center">
+    </div>
+    <div class="card text-center">
+    <div class="card-body w-50 m-5 pb-5 mx-auto">
     <hr><h4>Specials Menu</h4><hr>
+    <div class="text-left">
     {{#special}}
         <h4>{{name}}</h4>
         <p>
@@ -78,6 +85,7 @@
             Availability: {{availability}} <br></p>
         <a href="/edit/{{_id}}">Update Dish</a> <br>
     {{/special}}
+    </div>
     </div>
     </div>
     </div>
