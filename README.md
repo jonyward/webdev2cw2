@@ -14,4 +14,5 @@ a staff page, which is only accessible through a login function which authentica
 
 # Staff Login Credentials
 Username: Admin 
+
 Password: Admin 
