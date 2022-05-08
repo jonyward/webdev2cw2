@@ -15,6 +15,7 @@ router.get("/new", verify, controller.show_new_dishes);
 router.get("/edit/:id", verify, controller.show_update_page);
 router.post("/update", verify, controller.post_update);
 
+//Error handling
 router.use(function (req, res) {
     res.status(404);
     res.type('text/plain');

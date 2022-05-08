@@ -10,6 +10,7 @@ class Menu {
         }
     }
 
+    //Inserts default dish entries to database
     init(){
         this.db.insert({
             name: 'Pepperoni Pizza',
@@ -56,6 +57,7 @@ class Menu {
         console.log('Dish Entered');
     }
 
+    //gets all dishes from database
     getAllDishes(){
         return new Promise((resolve, reject) => {
             this.db.find({}, function(err, dishes){
@@ -69,6 +71,7 @@ class Menu {
         })
     }
 
+    //gets all dishes with the type: 'Dinner' with availability set to true
     getDinnerDishes(){
         return new Promise((resolve, reject) => {
             this.db.find({ type: 'Dinner', availability: true }, function(err, dinner) {
@@ -81,6 +84,8 @@ class Menu {
             })
         })
     }
+
+    //gets all dinner dishes regardless of value of availability
     getAllDinnerDishes(){
         return new Promise((resolve, reject) => {
             this.db.find({ type: 'Dinner' }, function(err, dinner) {
@@ -93,6 +98,8 @@ class Menu {
             })
         })
     }
+
+    //gets all special dishes regardless of value of availability
     getAllSpecialDishes() {
         return new Promise((resolve, reject) => {
             this.db.find({ type: 'Special' }, function(err, special) {
@@ -105,6 +112,7 @@ class Menu {
             })
         })
     }
+    //gets all dishes with the type: 'Special' with availability set to true
     getSpecialDishes() {
         return new Promise((resolve, reject) => {
             this.db.find({ type: 'Special', availability: true }, function(err, special) {
@@ -118,6 +126,7 @@ class Menu {
         })
         
     }
+    //gets all dishes with the type: 'Special' with availability set to true
     getLunchDishes(){
         return new Promise((resolve, reject) => {
             this.db.find({ type: 'Lunch', availability: true }, function(err, lunch) {
@@ -130,6 +139,7 @@ class Menu {
             })
         })
     }
+    //gets all special dishes regardless of value of availability
     getAllLunchDishes(){
         return new Promise((resolve, reject) => {
             this.db.find({ type: 'Lunch' }, function(err, lunch) {
@@ -143,6 +153,7 @@ class Menu {
         })
     }
 
+    //adds dish to the database
     addDish(name, description, ingredients, allergens, price, type, availability) {
         var entry = {
             name: name, 
@@ -163,6 +174,7 @@ class Menu {
         })
     }
 
+    //finds dish from database based on its name value
     getDishByName(name) {
         return new Promise((resolve, reject) => {
             this.db.find({ 'name': name}, function(err, entries) {
@@ -176,6 +188,7 @@ class Menu {
         })
     }
 
+    //finds dish from database based on its id value
     getDishById(id) {
         return new Promise((resolve, reject) => {
             this.db.findOne({ '_id': id}, function(err, entries) {
@@ -189,6 +202,7 @@ class Menu {
         })
     }
 
+    //updates data already inseted in the database, fetching this data depending on its "_id" value and replacing all other values with ones inputed through a form
     updateDish(id, name, description, ingredients, allergens, price, type, availability) {
         return new Promise((resolve, reject) => {
             availability = availability === "True";

@@ -6,18 +6,22 @@ const dao = require("../models/loginModel");
 const db = new menuDAO();
 db.init();
 
+//shows login page
 exports.show_login = function (req, res) {
     res.render("login");
 };
 
+//shows about us page
 exports.show_about = function (req, res) {
     res.render("about");
 };
 
+//redirects user to staff page
 exports.handle_login = function (req, res) {   
     res.redirect("/staff")
 }
 
+//populates main view with data, specific to the menu data falls under
 exports.main_page = function (req, res) {
     let type = req.params.type;
     db.getDinnerDishes(type)
@@ -39,6 +43,7 @@ exports.main_page = function (req, res) {
         });
 };
 
+//shows update page view
 exports.show_update_page = function (req, res) {
     const id = req.params.id;
     db.getDishById(id)
@@ -50,6 +55,7 @@ exports.show_update_page = function (req, res) {
         });
 }
 
+//shows staff page view
 exports.staff_page = function (req, res) {
     let type = req.params.type;
     db.getAllDinnerDishes(type)
@@ -71,6 +77,7 @@ exports.staff_page = function (req, res) {
         });
 };
 
+//post function ran after add dish form on staff page view is completed
 exports.post_new_entry = function (req, res) {
     console.log("processing post_new_dish controller");
     if (!req.body.name) {
@@ -81,6 +88,7 @@ exports.post_new_entry = function (req, res) {
     res.redirect("/staff");
 }
 
+//post function ran after update dish form on update page view is completed
 exports.post_update = function (req, res) {
     console.log("Updating existing Dish");
     if (!req.body.name) {
@@ -91,6 +99,7 @@ exports.post_update = function (req, res) {
     res.redirect("/staff");
 }
 
+//shows new dishes
 exports.show_new_dishes = function (req, res) {
     let dish = req.params.name;
     db.getDishByName(dish)
@@ -106,6 +115,7 @@ exports.show_new_dishes = function (req, res) {
         });
 };
 
+//times out any running login cookies
 exports.logout = function (req, res) {
     res.clearCookie("jwt").status(200).redirect("/");
   };
