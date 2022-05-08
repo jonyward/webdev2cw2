@@ -12,10 +12,10 @@ class Menu {
 
     init(){
         this.db.insert({
-            name: 'Pizza',
-            description: 'Pepperoni Pizza',
-            ingredients: 'Dough, Cheese, Tomato, Pepperoni',
-            allergens: 'Gluten',
+            name: 'Pepperoni Pizza',
+            description: 'Fresh Stone cooked Pepperoni Pizza, made from fresh dough prepaired fresh every day, with a tomato base, mozzarella cheese, bazil and pepperoni toppings.',
+            ingredients: 'Dough, Cheese, Tomato, Pepperoni and Bazil',
+            allergens: 'Gluten/Wheat',
             price: 5,
             type: 'Dinner',
             availability: true
@@ -23,22 +23,33 @@ class Menu {
         console.log('Dish Entered');
 
         this.db.insert({
-            name: 'Pizza',
-            description: 'Pepperoni Pizza',
-            ingredients: 'Dough, Cheese, Tomato, Pepperoni',
-            allergens: 'Gluten',
-            price: 5,
+            name: 'Spaghetti Bolognese',
+            description: 'Spaghetti pasta served with beef mince, tomato and parmesan cheese.',
+            ingredients: 'Pasta, Beef mince, Onion, Tomato, Garlic, Parmesan cheese and Bread',
+            allergens: 'Gluten/Wheat',
+            price: 10,
+            type: 'Dinner',
+            availability: true
+        });
+        console.log('Dish Entered');
+
+        this.db.insert({
+            name: 'Fettuccine Alfredo',
+            description: 'Fettuccine Pasta ran through a mixture of butter and parmesan cheese, garnished with parsley. ',
+            ingredients: 'Fettuccine, Cream, Cheese, Parmesan, Garlic and Butter',
+            allergens: 'Gluten/Wheat, and Dairy.',
+            price: 7,
             type: 'Lunch',
             availability: true
         });
         console.log('Dish Entered');
 
         this.db.insert({
-            name: 'Pizza',
-            description: 'Pepperoni Pizza',
-            ingredients: 'Dough, Cheese, Tomato, Pepperoni',
-            allergens: 'Gluten',
-            price: 5,
+            name: 'Chicken Parmesan',
+            description: 'Breaded Chicken covered by a layer of permesan cheese and tomato sauce, served with spaghetti. ',
+            ingredients: 'Chicken Breast, Tomato sauce, Parmesan Cheese and Spaghetti',
+            allergens: 'Gluten/Wheat',
+            price: 12,
             type: 'Special',
             availability: true
         });
