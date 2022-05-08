@@ -11,7 +11,7 @@ Navigate to http://localhost:3000/ while nothing else is running on this port, i
 This application succesfully populates a nedb database, fetches this data and filters it through a view being placed depending on what menu the data falls under.
 
 Functionality has also been implemented to allow a front end application to add entries to the database as well as being able to update these entries, through 
-a staff page, which is only accessible through a login function which authenticates details inputed by the user through another model responsible for login data.
+a staff page, which is only accessible through a login function which authenticates details inputed by the user using another model responsible for login data.
 
 Adding and editing data is only accessible to the user through authenticating this login. 
 
