@@ -16,17 +16,14 @@ exports.login = function (req, res, next) {
             return res.render("login");
         }
 
-        //compare provided password with stored password
         bcrypt.compare(password, user.password, function (err, result) {
             if (result) {
-                //use the payload to store information about the user such as username.
                 let payload = { username: username };
-                //create the access token 
                 let accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 300 });
                 res.cookie("jwt", accessToken);
                 next();
             } else {
-                return res.render("login"); //res.status(403).send();
+                return res.render("login");
             }
         });
     });
@@ -42,7 +39,6 @@ exports.verify = function (req, res, next) {
         payload = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
         next();
     } catch (e) {
-        //if an error occured return request unauthorized error
         return res.render("login");
     }
 };

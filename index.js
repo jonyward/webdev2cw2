@@ -1,9 +1,9 @@
 const express = require('express');
 
-require('dotenv').config() // loads data from .env file
+require('dotenv').config()
 
 const app = express();
-require('dotenv').config() // loads data from .env file
+require('dotenv').config()
 
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())

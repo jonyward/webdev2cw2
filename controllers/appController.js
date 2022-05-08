@@ -1,4 +1,3 @@
-//Create Link to the model of the application. Add const for each part of app model
 const { response } = require("express");
 const { render } = require("mustache");
 const menuDAO = require("../models/menuModel");
@@ -15,7 +14,7 @@ exports.show_about = function (req, res) {
     res.render("about");
 };
 
-exports.handle_login = function (req, res) {    //login
+exports.handle_login = function (req, res) {   
     res.redirect("/staff")
 }
 
