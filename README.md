@@ -6,5 +6,4 @@ npm install
 
 node index
 
-
-Open choice of browser through local port 3000 to access web application.
+Navigate to http://localhost:3000/ while nothing else is running on this port, in any broswer to access the web application.
